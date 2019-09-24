@@ -11,7 +11,7 @@ Param (
 
 # Automation Account Endpoint
 [Parameter(Mandatory=$true)]
-[String] $AutomationAccountEndpoint ,
+[Url] $AutomationAccountEndpoint ,
 
 # Automation Account Key
 [Parameter(Mandatory=$true)]
@@ -94,4 +94,4 @@ if ($i -le 0) {
 
 # Register the hybrid runbook worker
 Write-Output "Registering the hybrid runbook worker..."
-Add-HybridRunbookWorker -Name "$HybridGroupName" -EndPoint "$AutomationAccountEndpoint" -Token "$AutomationAccountKey"
+Add-HybridRunbookWorker -Name "$HybridGroupName" -Url "$AutomationAccountEndpoint" -Key "$AutomationAccountKey"
