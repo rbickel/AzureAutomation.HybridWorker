@@ -2,23 +2,23 @@
 
 Param (
 # OMS Workspace
-[Parameter(Mandatory=$false)]
+[Parameter(Mandatory=$true)]
 [String] $WorkspaceId,
 
 # OMS Workspace Key
-[Parameter(Mandatory=$false)]
+[Parameter(Mandatory=$true)]
 [String] $WorkspaceKey,
 
 # Automation Account Endpoint
 [Parameter(Mandatory=$true)]
-[Url] $AutomationAccountEndpoint ,
+[String] $AutomationAccountEndpoint,
 
 # Automation Account Key
 [Parameter(Mandatory=$true)]
-[String] $AutomationAccountKey ,
+[String] $AutomationAccountKey,
 
 # Hyprid Group
-[Parameter(Mandatory=$true)]
+[Parameter(Mandatory=$false)]
 [String] $HybridGroupName = "windows"
 )
 
@@ -95,3 +95,4 @@ if ($i -le 0) {
 # Register the hybrid runbook worker
 Write-Output "Registering the hybrid runbook worker..."
 Add-HybridRunbookWorker -Name "$HybridGroupName" -Url "$AutomationAccountEndpoint" -Key "$AutomationAccountKey"
+
