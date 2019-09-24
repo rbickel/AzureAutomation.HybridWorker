@@ -11,7 +11,7 @@ Param (
 
 # Automation Account Endpoint
 [Parameter(Mandatory=$true)]
-[Url] $AutomationAccountEndpoint,
+[String] $AutomationAccountEndpoint,
 
 # Automation Account Key
 [Parameter(Mandatory=$true)]
