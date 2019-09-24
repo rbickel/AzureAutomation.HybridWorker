@@ -1,5 +1,4 @@
 # EXAMPLE ./hybridworker.ps1 -WorkspaceId "xxxxxxxxx" -WorkspaceKey "xxxxxxxxx" -AutomationAccountKey "xxxxxxxx" -AutomationAccountEndpoint "xxxxxxx"
-#Requires -RunAsAdministrator
 
 Param (
 # OMS Workspace
@@ -24,6 +23,7 @@ Param (
 )
 
 # Check for the MMA on the machine
+Start-Transcript
 try {
 
     $mma = New-Object -ComObject 'AgentConfigManager.MgmtSvcCfg'
